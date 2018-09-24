@@ -1,19 +1,13 @@
-<html>
-    <head>
-        <title>About</title>
-    </head>
-    <body>
-        <div>
-            <h1><a href="/">Django Girls Blog</a></h1>
-        </div>
+{% extends 'blog/base.html' %}
 
-        <div>
-            <h2>About this site</h2>
-            <p>
-              This is my first attempt at building a site using django.
-              It is a generic blog site.
-            </p>
+{% block content %}
+    {% for post in about %}
+        <div class="post">
+            <div class="date">
+                {{ post.published_date }}
+            </div>
+            <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+            <p>{{ post.text|linebreaksbr }}</p>
         </div>
-
-    </body>
-</html>
+    {% endfor %}
+{% endblock %}
