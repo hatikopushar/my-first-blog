@@ -1,0 +1,11 @@
+{% extends 'artdatabase/base.html' %}
+
+{% block content %}
+    {% for art in arts %}
+        <div class="art">
+            <h1><a href="{% url 'art_detail' pk=art.pk %}">{{ art.title }}</a></h1>
+            <p>Artist: {{ art.artist|linebreaksbr }}</p>
+            <p>Created: {{ art.created|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'artdatabase/base.html' %}
+
+{% block content %}
+    <form method="POST" class="art-form">{% csrf_token %}
+        <p><input type="text" name="search-artist-by-name" placeholder="Search"/></p>
+        <button type="submit" class="btn btn-default">Search Artist By Name</button>
+    </form>
+
+    <form method="POST" class="art-form">{% csrf_token %}
+        <p><input type="text" name="search-artist-by-id" placeholder="Search"/></p>
+        <button type="submit" class="btn btn-default">Search Artist By Id</button>
+    </form>
+
+    <form method="POST" class="art-form">{% csrf_token %}
+        <p><input type="text" name="search-art-by-artist-id" placeholder="Search"/></p>
+        <button type="submit" class="btn btn-default">Search Art By Artist Id</button>
+    </form>
+{% endblock %}

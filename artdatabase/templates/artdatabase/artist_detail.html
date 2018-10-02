@@ -1,0 +1,10 @@
+{% extends 'artdatabase/base.html' %}
+
+{% block content %}
+    <div class="art">
+        {% if user.is_authenticated %}
+             <a class="btn btn-default" href="{% url 'artist_edit' pk=artist.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+        {% endif %}
+        <h1>{{ artist.name }}</h1>
+    </div>
+{% endblock %}
